@@ -11,12 +11,13 @@ image:
   tag: "40251985763"
 
 ingress:
-  enabled: true
-  className: "nginx"
+  enabled: false
+  className: ""
   annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: 34.202.39.186.nip.io
+    - host: chart-example.local
       paths:
         - path: /
-          pathType: Prefix
-  tls: []
+          pathType: ImplementationSpecific
