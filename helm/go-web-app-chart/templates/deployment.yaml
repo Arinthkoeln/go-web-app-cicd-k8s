@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: go-web-app
-        image: newarin/go-web-app-devops::{{ .Values.image.tag }}
+        image: newarin/go-web-app-devops:{{ .Values.image.tag }}
         ports:
         - containerPort: 8080
