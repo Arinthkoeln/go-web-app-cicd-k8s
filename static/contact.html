@@ -1,68 +1,85 @@
-<Doctype html>
-<html>
-    <head>
-        <title>Contact</title>
-        <style>
-            body {
-                margin: 0;
-                padding: 0;
-            }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact · Arin DevOps</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="brand" href="/home">
+                <span class="brand-mark">A</span>
+                <span>Arin<span class="gradient-text">DevOps</span></span>
+            </a>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/courses">Courses</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a class="active" href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-            header {
-                background-color: #333;
-                color: #fff;
-                padding: 10px 0;
-                text-align: center;
-            }
+    <main>
+        <section class="hero rise">
+            <span class="section-label">Contact</span>
+            <h1>Say <span class="gradient-text">hello.</span></h1>
+            <p class="lead">
+                Stuck on a course, spotted a bug in the pipeline, or want to talk about
+                Kubernetes? Any of these reach me.
+            </p>
+        </section>
 
-            nav ul {
-                list-style-type: none;
-                padding: 0;
-            }
+        <section class="rise rise-1">
+            <div class="grid">
+                <article class="card">
+                    <div class="card-icon">💬</div>
+                    <h3>Community chat</h3>
+                    <p>Ask questions while you work through the material and see what others are stuck on.</p>
+                    <a class="btn btn-primary btn-sm" href="#" target="_blank" rel="noopener">Join the channel</a>
+                </article>
 
-            nav ul li {
-                display: inline;
-                margin-right: 10px;
-            }
+                <article class="card">
+                    <div class="card-icon">🐙</div>
+                    <h3>GitHub</h3>
+                    <p>Issues and pull requests on the project are welcome — that includes fixes to these pages.</p>
+                    <a class="btn btn-secondary btn-sm" href="https://github.com/Arinthkoeln/go-web-app-cicd-k8s" target="_blank" rel="noopener">Open an issue</a>
+                </article>
 
-            nav ul li a {
-                color: #fff;
-                text-decoration: none;
-            }
+                <article class="card">
+                    <div class="card-icon">✉️</div>
+                    <h3>Email</h3>
+                    <p>For anything longer than a chat message, or if you'd rather not post in public.</p>
+                    <a class="btn btn-secondary btn-sm" href="mailto:hello@example.com">Send an email</a>
+                </article>
+            </div>
+        </section>
 
-            main {
-                padding: 20px;
-            }
+        <section class="rise rise-2">
+            <h2>Before you write</h2>
+            <p class="lead">
+                If it's a question about a specific course, the answer may already be in the
+                track itself — worth a look first.
+            </p>
+            <div class="btn-row">
+                <a class="btn btn-primary" href="/courses">Browse the courses</a>
+                <a class="btn btn-ghost" href="/home">← Back to home</a>
+            </div>
+        </section>
+    </main>
 
-            section {
-                margin-bottom: 20px;
-            }
-
-            footer {
-                background-color: #333;
-                color: #fff;
-                text-align: center;
-                padding: 10px 0;
-                position: fixed;
-                bottom: 0;
-                width: 100%;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="home">Home</a></li>
-                    <li><a href="about">About</a></li>
-                    <li><a href="contact">Contact</a></li>
-                    <li><a href="courses">Courses</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <main>
-            <section>
-                <h1>Contact Us</h1>
-                <p>For any doubts while learning, Join our Members only exclusive slack channel</p>
-                <a href="https://www.youtube.com/abhishekVeeramalla/join">Join Slack</a>
+    <footer>
+        <div class="footer-inner">
+            <span>&copy; 2026 Arin · Built with Go</span>
+            <div class="footer-links">
+                <a href="/home">Home</a>
+                <a href="/courses">Courses</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

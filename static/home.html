@@ -1,91 +1,114 @@
-<!DOCTYPE html>
+<h1>Every commit<br><span class="gradient-text">moves forward.</span></h1><h1>Every commit<br><span class="gradient-text">moves forward.</span></h1><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 10px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        main {
-            padding: 20px;
-        }
-
-        section {
-            margin-bottom: 20px;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>    
+    <title>Home · Arin DevOps</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <header>
         <nav>
+            <a class="brand" href="/home">
+                <span class="brand-mark">A</span>
+                <span>Arin<span class="gradient-text">DevOps</span></span>
+            </a>
             <ul>
-                <li><a href="home">Home</a></li>
-                <li><a href="about">About</a></li>
-                <li><a href="contact">Contact</a></li>
-                <li><a href="courses">Courses</a></li>
+                <li><a class="active" href="/home">Home</a></li>
+                <li><a href="/courses">Courses</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
-		    <h1>Learn DevOps from Basics with Arin </h1>
-		    <p>The main purpose of this website is to guide people on how to learn DevOps 
-                from basics for Free. We will provide you with the best resources to learn.
+        <section class="hero rise">
+            <span class="badge"><span class="dot"></span> Running on Kubernetes · deployed by Argo CD</span>
+            <h1>Every commit<br><span class="gradient-text">moves forward.</span></h1>
+            <p class="lead">
+                A free, practical path through the tools that actually ship software —
+                containers, pipelines, Kubernetes and the cloud. No prior ops experience needed.
             </p>
+            <div class="btn-row">
+                <a class="btn btn-primary" href="/courses">Explore the courses →</a>
+                <a class="btn btn-secondary" href="/about">How this site is built</a>
+                <a class="btn btn-ghost" href="/contact">Get in touch</a>
+            </div>
         </section>
 
-        <section>
-            <h2>Overview</h2>
-            <p> Zero to Hero courses on all DevOps tools and popular Cloud(AWS and Azure) platform</p>
+        <section class="rise rise-1">
+            <div class="stats">
+                <div>
+                    <div class="stat-value gradient-text">9</div>
+                    <div class="stat-label">Course tracks</div>
+                </div>
+                <div>
+                    <div class="stat-value gradient-text">100%</div>
+                    <div class="stat-label">Free to follow</div>
+                </div>
+                <div>
+                    <div class="stat-value gradient-text">Go</div>
+                    <div class="stat-label">Powering this app</div>
+                </div>
+                <div>
+                    <div class="stat-value gradient-text">CI/CD</div>
+                    <div class="stat-label">Fully automated</div>
+                </div>
+            </div>
         </section>
 
-        <section>
-            <h2>Courses Offered</h2>
-            <p>Please look at the <a href="courses">courses</a> section.</p>  
+        <section class="rise rise-2">
+            <span class="section-label">What you get</span>
+            <h2>Everything in one place</h2>
+            <div class="grid">
+                <article class="card">
+                    <div class="card-icon">🚀</div>
+                    <h3>Zero to Hero tracks</h3>
+                    <p>Structured series on Docker, Kubernetes, Terraform, Ansible and more — each starting from nothing.</p>
+                    <a class="btn btn-secondary btn-sm" href="/courses">Browse tracks</a>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">☁️</div>
+                    <h3>Cloud platforms</h3>
+                    <p>Hands-on AWS and Azure material, covering the services you meet in real production environments.</p>
+                    <a class="btn btn-secondary btn-sm" href="/courses">See cloud courses</a>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">🛠️</div>
+                    <h3>Real projects</h3>
+                    <p>This very site is the reference project: a Go app with a full pipeline from commit to cluster.</p>
+                    <a class="btn btn-secondary btn-sm" href="/about">Read the breakdown</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="rise rise-3">
+            <span class="section-label">Start here</span>
+            <h2>Not sure where to begin?</h2>
+            <p class="lead">
+                Start with the DevOps Zero to Hero track, then come back and read how this
+                application gets built, containerised and deployed.
+            </p>
+            <div class="btn-row">
+                <a class="btn btn-primary" href="/courses">Start learning</a>
+                <a class="btn btn-secondary" href="https://github.com/Arinthkoeln/go-web-app-cicd-k8s" target="_blank" rel="noopener">View source on GitHub</a>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; Abhishek.Veeramalla</p>
+        <div class="footer-inner">
+            <span>&copy; 2026 Arin · Built with Go</span>
+            <div class="footer-links">
+                <a href="/home">Home</a>
+                <a href="/courses">Courses</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

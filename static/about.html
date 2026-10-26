@@ -1,90 +1,133 @@
-<Docktype html>
-<html>
-    <head>
-        <title>About</title>
-        <style>
-            body {
-                margin: 0;
-                padding: 0;
-            }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About · Arin DevOps</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="brand" href="/home">
+                <span class="brand-mark">A</span>
+                <span>Arin<span class="gradient-text">DevOps</span></span>
+            </a>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/courses">Courses</a></li>
+                <li><a class="active" href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-            header {
-                background-color: #333;
-                color: #fff;
-                padding: 10px 0;
-                text-align: center;
-            }
+    <main>
+        <section class="hero rise">
+            <span class="section-label">About</span>
+            <h1>A Go app with a <span class="gradient-text">real pipeline</span> behind it.</h1>
+            <p class="lead">
+                I'm Arin. This site is deliberately small on the surface — four pages served
+                by a single Go binary — because the interesting part is everything that
+                happens between a <code>git push</code> and a running pod.
+            </p>
+            <div class="btn-row">
+                <a class="btn btn-primary" href="https://github.com/Arinthkoeln/go-web-app-cicd-k8s" target="_blank" rel="noopener">View the repository</a>
+                <a class="btn btn-secondary" href="/contact">Get in touch</a>
+            </div>
+        </section>
 
-            nav ul {
-                list-style-type: none;
-                padding: 0;
-            }
+        <section class="rise rise-1">
+            <span class="section-label">The stack</span>
+            <h2>What it's made of</h2>
+            <div class="grid">
+                <article class="card">
+                    <div class="card-icon">🐹</div>
+                    <h3>Go standard library</h3>
+                    <p>No framework. <code>net/http</code> serves four routes, a static file handler and a <code>/healthz</code> endpoint for probes.</p>
+                </article>
 
-            nav ul li {
-                display: inline;
-                margin-right: 10px;
-            }
+                <article class="card">
+                    <div class="card-icon">🐳</div>
+                    <h3>Multi-stage Docker</h3>
+                    <p>Built on the Go image, shipped on <code>distroless</code> — no shell, no package manager, a much smaller attack surface.</p>
+                </article>
 
-            nav ul li a {
-                color: #fff;
-                text-decoration: none;
-            }
+                <article class="card">
+                    <div class="card-icon">⎈</div>
+                    <h3>Kubernetes + Helm</h3>
+                    <p>Deployment, Service and Ingress as raw manifests, and the same thing packaged as a Helm chart with templated image tags.</p>
+                </article>
+            </div>
+            <div class="tags">
+                <span class="tag">Go</span>
+                <span class="tag">Docker</span>
+                <span class="tag">GitHub Actions</span>
+                <span class="tag">Kubernetes</span>
+                <span class="tag">Helm</span>
+                <span class="tag">Argo CD</span>
+                <span class="tag">Nginx Ingress</span>
+                <span class="tag">EKS</span>
+            </div>
+        </section>
 
-            main {
-                padding: 20px;
-            }
+        <section class="rise rise-2">
+            <span class="section-label">The pipeline</span>
+            <h2>From commit to cluster</h2>
+            <ol class="timeline">
+                <li>
+                    <h3>Push to main</h3>
+                    <p>A commit triggers the GitHub Actions workflow in <code>.github/workflows/ci.yaml</code>.</p>
+                </li>
+                <li>
+                    <h3>Build and test</h3>
+                    <p><code>go build</code> and <code>go test</code> run first — a failing test stops the pipeline before anything is published.</p>
+                </li>
+                <li>
+                    <h3>Lint</h3>
+                    <p>golangci-lint checks the code for the problems a compiler is happy to let through.</p>
+                </li>
+                <li>
+                    <h3>Build and push the image</h3>
+                    <p>The multi-stage Dockerfile produces a distroless image, tagged with the run number and pushed to the registry.</p>
+                </li>
+                <li>
+                    <h3>Update the Helm values</h3>
+                    <p>The workflow writes the new tag into <code>helm/go-web-app-chart/values.yaml</code> and commits it back — the repo stays the source of truth.</p>
+                </li>
+                <li>
+                    <h3>Argo CD syncs</h3>
+                    <p>Argo CD notices the changed chart and rolls the new version out to the cluster. Nothing is ever applied by hand.</p>
+                </li>
+            </ol>
+        </section>
 
-            section {
-                margin-bottom: 20px;
-            }
+        <section class="rise rise-3">
+            <span class="section-label">Why bother</span>
+            <h2>The point of the exercise</h2>
+            <p class="lead">
+                Plenty of tutorials stop at "it runs on my machine". This one goes all the way
+                to a declarative deployment that any teammate can reproduce from the repository
+                alone — which is the part that actually matters in production.
+            </p>
+            <div class="btn-row">
+                <a class="btn btn-primary" href="/courses">Browse the courses</a>
+                <a class="btn btn-secondary" href="https://github.com/Arinthkoeln/go-web-app-cicd-k8s" target="_blank" rel="noopener">Read the source</a>
+                <a class="btn btn-ghost" href="/home">← Back to home</a>
+            </div>
+        </section>
+    </main>
 
-            footer {
-                background-color: #333;
-                color: #fff;
-                text-align: center;
-                padding: 10px 0;
-                position: fixed;
-                bottom: 0;
-                width: 100%;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="home">Home</a></li>
-                    <li><a href="about">About</a></li>
-                    <li><a href="contact">Contact</a></li>
-                    <li><a href="courses">Courses</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <main>
-            <section>
-                <h1>About the Author</h1>
-                <p>Hi Everyone, My name is Abhishek and welcome to my channel :)</p>
-
-                    <p>    I am an opensource enthusiast and a great believer in sharing knowledge. </p>
-                        <p>  I have my footprints in popular opensource projects like Argo CD, Argo CD Operator, Argo Rollouts Manager, GitOps Operator, F5 Ingress Controller, Nginx Ingress Controller by Nginx and others. </p>
-                    
-                            <p> Apart from working with Red Hat as a GitOps product lead, I also hold below positions in OpenSource communities</p>
-                                <p>  - Maintainer of Argo CD Operator</p>
-                                    <p> - Creator of Argo Rollouts Manager</p>
-                                        <p> - Maintainer of RedHat Developer (GitOps operator)</p>
-                                            <p> - Member of Argo Project</p>
-                                                <p> - Member of Argo SIG Security</p>
-                    
-                                                    <p> If you want to learn complete devops for free with practical projects, checkout the playlist</p>
-                                                        <p><a href="https://www.youtube.com/playlist?list=PLdpzxOOAlwvIKMhk8WhzN1pYoJ1YU8Csa"> Playlists</a></p>
-                    
-                                                            <p> Please subscribe to the channel to keep learning and growing together. Thanks :)</p>
-            </section>
-        </main>
-
-        <footer>
-            <p>&copy; Abhishek.Veeramalla</p>
-        </footer>
-    </body>
+    <footer>
+        <div class="footer-inner">
+            <span>&copy; 2026 Arin · Built with Go</span>
+            <div class="footer-links">
+                <a href="/home">Home</a>
+                <a href="/courses">Courses</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>
