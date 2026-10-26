@@ -8,7 +8,7 @@ image:
   repository: newarin/go-web-app-devops
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "40243824727"
+  tag: "40250174377"
 
 ingress:
   enabled: false
